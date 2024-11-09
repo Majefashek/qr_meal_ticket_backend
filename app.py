@@ -87,12 +87,7 @@ def meal_ticket():
             conn.close()
             return jsonify({"message": "Here is your dinner! Enjoy!"}), 200
     else:
-        conn = sqlite3.connect('meal_ticketing.db')
-        c = conn.cursor()
-        c.execute('INSERT INTO meal_tickets (email, date, meal_count) VALUES (?, ?, ?)', (email, current_date, 1))
-        conn.commit()
-        conn.close()
-        return jsonify({"message": "Here is your dinner! Enjoy!"}), 200
+        return jsonify({"message": "You are not registered!"}), 400
 
 if __name__ == '__main__':
     init_db()
