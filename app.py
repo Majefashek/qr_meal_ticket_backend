@@ -67,7 +67,7 @@ def meal_ticket():
         return jsonify({"message": "Invalid time format. Expected format: YYYY-MM-DDTHH:MM:SS"}), 400
 
     current_hour = current_datetime.hour
-    if current_hour < 1 or current_hour >= 12:
+    if current_hour < 2 or current_hour >= 12:
         return jsonify({"message": "This system accepts meal tickets only between 1 AM and 12 PM."}), 400
 
     current_date = current_datetime.strftime('%Y-%m-%d')
