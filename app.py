@@ -55,7 +55,7 @@ def meal_ticket():
     qr_code_data = data.get('qrCodeData')
     current_time = data.get('time')
 
-    return jsonify({"message": "Time is required."}), 200
+    #return jsonify({"message": "Time is required."}), 200
     
     # Validate time format
     if not current_time:
